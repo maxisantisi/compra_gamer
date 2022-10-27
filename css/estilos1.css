@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+.imgIcono {
+    height: 60px;
+}
+
+.navbar{
+    background-color: aquamarine;
+}
+
+.imgProductos {
+    width: 150px;
+    height: 200px;
+    object-fit: contain;
+    margin-top: 1rem;
+}
+
+.textoTarjeta {
+    text-align: center;
+}
+
+.cardCarrito{
+    height: 70px;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    margin: 0rem;
+    box-shadow: 0px 0px 10px #000;
+    border-radius: 10px;
+}
+.card {
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    box-shadow: 0px 0px 10px #000;
+    border-radius: 10px;
+}
+
+
+
+.links{
+    text-decoration: none;
+
+}
+
+.footerColor {
+    background-color: aquamarine;
+    color: black;
+}
