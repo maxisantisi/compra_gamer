@@ -8,26 +8,25 @@ class Producto {
     }
 }
 
-const producto1 = new Producto (1, "sahumerios", 100 , "image/sahumerio1.jpg");
-const producto2 = new Producto (2, "Caja Buda", 100 , "image/cajaBuda.jpg");
-const producto3 = new Producto (3, "Caja Mate", 100 , "image/cajaMate.jpg");
-const producto4 = new Producto (4, "Caja Mate", 100 , "image/cajaMate2.jpg");
-const producto5 = new Producto (5, "Caja Mate", 100 , "image/cajaMate3.jpg");
-const producto6 = new Producto (6, "Cascada", 100 , "image/cascada1.jpg");
-const producto7 = new Producto (7, "Cascadas", 100 , "image/cascada2.jpg");
-const producto8 = new Producto (8, "Humadero", 100 , "image/humadero.jpg");
-const producto9 = new Producto (9, "Incienso", 100 , "image/incienso.jpg");
-const producto10 = new Producto (10, "Jarron", 100 , "image/jarron.jpg");
-const producto11 = new Producto (11, "Combo Mate", 100 , "image/mate1.jpg");
-const producto12 = new Producto (12, "Combo Mate 2", 100 , "image/mate2.jpg");
-const producto13 = new Producto (13, "Combo Mate 3", 100 , "image/mate3.jpg");
-const producto14 = new Producto (14, "Combo Mate 4", 100 , "image/mate4.jpg");
-const producto15 = new Producto (15, "Vela", 100 , "image/vela.jpg");
-const producto16 = new Producto (16, "Velas", 100 , "image/velas.jpg");
-const producto17 = new Producto (17, "Vela y Flor", 100 , "image/velayflor.jpg");
+const producto1 = new Producto (1, "Memoria Ram", 75 , "image/memoria.jpg");
+const producto2 = new Producto (2, "Mother Asus", 80 , "image/mother_asus.jpg");
+const producto3 = new Producto (3, "Mother Prime", 80 , "image/mother_prime.jpg");
+const producto4 = new Producto (4, "Mouse", 30 , "image/mouse.jpg");
+const producto5 = new Producto (5, "Notebook", 1.706 , "image/notebook.jpg");
+const producto6 = new Producto (6, "Placa de video 1630", 162 , "image/placa_1630.jpg");
+const producto7 = new Producto (7, "Placa de video 1660", 308 , "image/placa_1660.jpg");
+const producto8 = new Producto (8, "Placa de video 3050", 365 , "image/placa_3050.jpg");
+const producto9 = new Producto (9, "Placa MSI", 34 , "image/placa_msi.jpg");
+const producto10 = new Producto (10, "SmartWatch", 145 , "image/reloj.jpg");
+const producto11 = new Producto (11, "Silla Gamer", 406 , "image/silla.jpg");
+const producto12 = new Producto (12, "Tablet", 322 , "image/tablet.jpg");
+const producto13 = new Producto (13, "Fuente Asus", 65 , "image/fuente_asus.jpg");
+const producto14 = new Producto (14, "Fuente Thor", 170 , "image/fuente_thor.jpg");
+const producto15 = new Producto (15, "Gabinete", 275 , "image/gabinete.jpg");
 
 
-const productos = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11, producto12, producto13, producto14, producto15, producto16];
+
+const productos = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11, producto12, producto13, producto14, producto15];
 
 
 let carrito = [];
@@ -50,7 +49,7 @@ const mostrarProductos = () => {
             <img src="${producto.img}" class="card-img-top imgProductos" alt="${producto.nombre}">
             <div class="card-body">
             <h5 class="card-title"> ${producto.nombre} </h5>
-            <p class="card-text"> ${producto.precio} </p>
+            <p class="card-text"> U$S ${producto.precio} </p>
             <button class="btn btn-success" id="boton${producto.id}"> Agregar al Carrito </button>
             </div>
         </div>
@@ -108,7 +107,7 @@ const mostrarCarrito = () => {
                 <img src="${producto.img}" class="card-img-top imgProductos" alt="${producto.nombre}">
                 <div class="card-body">
                 <h5 class="card-title"> ${producto.nombre} </h5>
-                <p class="card-text"> ${producto.precio} </p>
+                <p class="card-text"> U$S ${producto.precio} </p>
                 <p class="card-text"> ${producto.cantidad} </p>
                 <button class="btn btn-success" id="eliminar${producto.id}"> Eliminar Producto </button>
                 </div>
@@ -121,7 +120,9 @@ const mostrarCarrito = () => {
         boton.addEventListener("click", () => {
             eliminarDelCarrito(producto.id);
         })
+        
     })
+
     calcularTotal();
 }
 
@@ -157,5 +158,24 @@ const eliminarTodoElCarrito = () => {
 }
 
 
+const criptoYa = "https://criptoya.com/api/dolar";
 
+const divDolar = document.getElementById("divDolar");
+
+setInterval( () => {
+    fetch(criptoYa)
+        .then( response => response.json())
+        .then(({blue, ccb, ccl, mep, oficial, solidario}) => {
+            divDolar.innerHTML= `
+                <h2>Tipos de Dolar: </h2>
+                <p> Dolar Oficial: ${oficial} </p>
+                <p> Dolar Solidario: ${solidario} </p>
+                <p> Dolar MEP: ${mep} </p>
+                <p> Dolar CCL: ${ccl} </p>
+                <p> Dolar CCB: ${ccb} </p>
+                <p> Dolar Blue: ${blue} </p>
+                `
+        })
+        .catch(error => console.error(error))
+}, 3000)
 

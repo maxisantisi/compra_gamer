@@ -4,14 +4,16 @@
     box-sizing: border-box;
     
 }
-
+body{
+    background-color: rgb(231, 231, 231);
+}
 
 .imgIcono {
     height: 60px;
 }
 
 .navbar{
-    background-color: aquamarine;
+    background-color: rgb(11, 65, 6);
 }
 
 .imgProductos {
@@ -27,7 +29,7 @@
 
 .cardCarrito{
     height: 70px;
-    background-color: aquamarine;
+    background-color: white;
     display: flex;
     align-items: center;
     margin: 0rem;
@@ -35,7 +37,7 @@
     border-radius: 10px;
 }
 .card {
-    background-color: aquamarine;
+    background-color: white;
     display: flex;
     align-items: center;
     margin: 1rem;
@@ -51,6 +53,6 @@
 }
 
 .footerColor {
-    background-color: aquamarine;
+    background-color: rgb(11, 65, 6);
     color: black;
 }
