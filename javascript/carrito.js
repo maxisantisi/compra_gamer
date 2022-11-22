@@ -177,5 +177,15 @@ setInterval( () => {
                 `
         })
         .catch(error => console.error(error))
-}, 3000)
+}, 2000)
 
+const linkk = document.getElementById("linkk");
+
+linkk.addEventListener("click", () => {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Tienda en Construcción :)',
+        
+      })
+});
