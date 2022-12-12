@@ -198,5 +198,5 @@ const calcularTotal = () => {
         totalCompra += producto.precio * producto.cantidad;
         //+= es igual a poner totalCompra = totalCompra + producto.precio * producto.cantidad;
     })
-    total.innerHTML = `Total: $${totalCompra}`;
+    total.innerHTML = `Total: U$S ${totalCompra}`;
 }
