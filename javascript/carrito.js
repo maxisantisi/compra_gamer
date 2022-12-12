@@ -189,3 +189,14 @@ linkk.addEventListener("click", () => {
         
       })
 });
+
+const total = document.getElementById("total");
+
+const calcularTotal = () => {
+    let totalCompra = 0; 
+    carrito.forEach((producto) => {
+        totalCompra += producto.precio * producto.cantidad;
+        //+= es igual a poner totalCompra = totalCompra + producto.precio * producto.cantidad;
+    })
+    total.innerHTML = `Total: $${totalCompra}`;
+}
